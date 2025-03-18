@@ -1,0 +1,41 @@
+# Compilados de Java
+*.class
+
+# Directorios de compilación
+/bin/
+/out/
+/target/
+/build/
+
+# Configuración de IDEs
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+
+# Archivos generados por Maven o Gradle
+.mvn/
+.gradle/
+**/build/
+
+# Archivos de control de versiones específicos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Logs y cachés
+*.log
+*.cache
+*.tmp
+
+# Configuración local
+*.env
+*.properties
+
+# Dependencias externas (si no usas un gestor)
+lib/
+
+# Archivos de empaquetado
+*.jar
+*.war
+*.ear
