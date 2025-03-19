@@ -2,7 +2,7 @@
 *.class
 
 # Directorios de compilación
-/bin/
+**/bin/
 /out/
 /target/
 /build/
@@ -39,3 +39,9 @@ lib/
 *.jar
 *.war
 *.ear
+
+#extras java
+*.classpath
+*.project
+*.metadata
+*.settings
