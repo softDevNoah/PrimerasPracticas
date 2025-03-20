@@ -34,7 +34,28 @@ public class CastingTests {
 		
 		System.out.println("Nuevo valor de i = " + i);
 		c = (char)i;
-		System.out.println("c = (char)i de forma EXplícita -> c = " + c + " (no aparece error como tal)\n");
+		System.out.println("c = (char)i de forma EXplícita -> c = " + c + " (no aparece error como tal)");
+		System.out.println("\nEntre valores numéricos enteros y decimales:");
+		numericCasting();
+	}
+	private static void numericCasting() {
+		int		i = 2;
+		double	d1 = 5.154564654, d2;
+		float	f1 = 3.1415f, f2;
+		System.out.println("Original values:\nint = " + i + "\ndouble = " + d1 + "\nfloat = " + f1);
+		System.out.println("\n - De float a double, y de int a float/double, se puede IMplícitamente:");
+		f2 = i;
+		d2 = f1;
+		System.out.println("float to double = " + d2 + ", int to float = " + f2);
+		f2 = (float)d1;
+		i = (int)d1;
+		System.out.println("\n - De double/float a int y de double to float, se DEBE hacer EXplícitamente:");
+		System.out.print("double to int = " + i + ", double to float = " + f2);
+		f2 = 3.1415f;
+		i = (int)f2;
+		System.out.println(", float to int = " + i + "\n");
+		//f1 = d1;
+		///i = d2;
 	}
 	public static void invalidCastExample() {
 		int		i = 1;
@@ -53,8 +74,5 @@ public class CastingTests {
 		infoCast2 = " en el nuevo tipo, no se puede hacer por ejemplo byte = long; porque long es mas grande que byte.";
 		if (bo)
 			System.out.println("\n" + infoCast1 + infoCast2);
-	}
-	
-	
-	
+	}	
 }
