@@ -9,12 +9,12 @@ public class Main {
 		System.out.println();
 		obj1.refExample();
 		obj1 = null;
-		System.out.println();
+		System.out.println(".............................................................................\n");
 		System.out.println("Ejemplos sobre casteos válidos e inválidos");
 		CastingTests obj2 = new CastingTests();
 		obj2.validCastExample();
 		System.out.println();
 		obj2.invalidCastExample();
-		System.out.println("\n......................................\nA la espera de nuevos métodos.");
+		System.out.println("\n..............................................................................\nA la espera de nuevos métodos.");
 	}
 }
