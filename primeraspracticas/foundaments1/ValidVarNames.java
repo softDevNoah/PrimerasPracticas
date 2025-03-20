@@ -1,7 +1,7 @@
 package foundaments1;
 
 public class ValidVarNames {
-	public void exampleUnvalidVarNames() {
+	public static void exampleUnvalidVarNames() {
 		boolean _notConventional = true, $notConventional = true, notconventional = true;
 		//boolean 3unvalid;
 		//boolean 4;

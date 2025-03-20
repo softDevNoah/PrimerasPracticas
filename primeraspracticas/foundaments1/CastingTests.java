@@ -2,7 +2,7 @@ package foundaments1;
 
 public class CastingTests {
 
-	public void validCastExample() {
+	public static void validCastExample() {
 		
 		char	c = '1'; //es 49 en ASCII, usando base decimal
 		int		i;
@@ -36,7 +36,7 @@ public class CastingTests {
 		c = (char)i;
 		System.out.println("c = (char)i de forma EXplícita -> c = " + c + " (no aparece error como tal)\n");
 	}
-	public void invalidCastExample() {
+	public static void invalidCastExample() {
 		int		i = 1;
 //		char	c;
 		boolean	bo = true;
