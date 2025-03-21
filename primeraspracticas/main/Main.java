@@ -1,4 +1,6 @@
-package foundaments1;
+package main;
+
+import foundaments1.*;
 
 public class Main {
 	public static void main(String []args) {
