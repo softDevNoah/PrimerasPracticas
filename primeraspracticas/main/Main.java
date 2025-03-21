@@ -1,9 +1,10 @@
 package main;
 
 import foundaments1.*;
+import javax.swing.JOptionPane;
 
-public class Main {
-	public static void main(String []args) {
+class CallFoundaments1 {
+	static void executeFoundaments1() {
 		System.out.println("----COPIA DE DATOS Y REFERENCIAS:");
 		DiffRefToCopy.copyExample();
 		DiffRefToCopy.refExample();
@@ -15,7 +16,21 @@ public class Main {
 		System.out.println("----NOMBRES VÁLIDOS E INVÁLIDOS DE VARIABLES:");
 		ValidVarNames.exampleUnvalidVarNames();
 		System.out.println(".............................................................................");
+	}
+}
+
+public class Main {
+	public static void main(String []args) {
+		//Panel de entrada con opciones "Aceptar" y "Cancelar"
+		int choise = JOptionPane.showConfirmDialog(null, "¿Deseas visualizar el resultado de foundaments1?", "Confirmación", JOptionPane.YES_NO_OPTION);
+        
+        if (choise == JOptionPane.YES_OPTION) {  // Si el usuario presiona "Aceptar" (textoIngresado no es null)
+            CallFoundaments1.executeFoundaments1();
+        } else {
+            JOptionPane.showMessageDialog(null, "Ok, se prosigue la siguiente parte del programa.", "Denegado", JOptionPane.WARNING_MESSAGE);
+        }
 		
 		System.out.println("A la espera de nuevos métodos.");
 	}
 }
+
