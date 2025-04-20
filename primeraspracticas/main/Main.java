@@ -5,7 +5,16 @@ import foundaments1.*;
 import java.util.*;
 
 class FoundamentsExecutor {
+	static void tryExe(String choise, int Foundaments) {
+		if (CheckInput.checkInput(choise) == 1) {
+			switch (Foundaments) {
+			case 1 :
+				FoundamentsExecutor.exeFoundaments1();
+			}
+		}
+	}
 	static void exeFoundaments1() {
+		
 		System.out.println("----COPIA DE DATOS Y REFERENCIAS:");
 		DiffRefToCopy.copyExample();
 		DiffRefToCopy.refExample();
@@ -20,9 +29,10 @@ class FoundamentsExecutor {
 	}
 }
 
-class CallMiniCalculator {
-	static void executeMiniCalculator() {
-		System.out.println("Mini calculadora en proceso de creación");
+class MiniCalculator {
+	static void tryExeCalculator(String choise) {
+		if (CheckInput.checkInput(choise) == 1)
+			System.out.println("Mini calculadora en proceso de creación");
 	}
 }
 
@@ -46,15 +56,16 @@ public class Main {
 
 		Scanner input = new Scanner(System.in);
 		String	choise;
+		
 		System.out.println("AVISO: Se responde solo: \"Sí\" o \"No\". Cualquier otra respuesta se interpretará como un No)\n");
 		System.out.println("¿Deseas visualizar el contenido de Foundaments1?");
 		choise = input.nextLine();
-		if (CheckInput.checkInput(choise) == 1)
-			FoundamentsExecutor.exeFoundaments1();
+		FoundamentsExecutor.tryExe(choise, 1);
+		
 		System.out.println("¿Deseas visualizar el contenido de minicalculator?");
 		choise = input.nextLine();
-		if (CheckInput.checkInput(choise) == 1)
-			System.out.println("Calculadora en proceso...");
+		MiniCalculator.tryExeCalculator(choise);
+		
         input.close();
 		System.out.println("A la espera de nuevos métodos.");
 	}
