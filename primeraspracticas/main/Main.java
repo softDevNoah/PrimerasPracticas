@@ -2,12 +2,10 @@ package main;
 
 import foundaments1.*;
 //import minicalculator.*;
-//import java.util.*;
+import java.util.*;
 
-import javax.swing.JOptionPane;
-
-class CallFoundaments1 {
-	static void executeFoundaments1() {
+class FoundamentsExecutor {
+	static void exeFoundaments1() {
 		System.out.println("----COPIA DE DATOS Y REFERENCIAS:");
 		DiffRefToCopy.copyExample();
 		DiffRefToCopy.refExample();
@@ -28,29 +26,36 @@ class CallMiniCalculator {
 	}
 }
 
-class CalcuPanel {
-	static int calcu = JOptionPane.showConfirmDialog(null, "Quieres usar la mini calculadora?", "Confirmación", JOptionPane.YES_NO_OPTION);
-
-	public static void calcuPanel() {
-		if (calcu == JOptionPane.YES_OPTION) {
-			CallMiniCalculator.executeMiniCalculator();
-		} else {
-			JOptionPane.showMessageDialog(null, "No hay más contenido actualmente para mostrar.", "Aviso de cierre", JOptionPane.WARNING_MESSAGE);
+class CheckInput {
+	static int checkInput(String input){
+		if (input.equals("Sí") || input.equals("Si") || input.equals("sí") || input.equals("si"))
+			return (1);
+		else if (input.equals("SÍ") || input.equals("SI"))
+			return (1);
+		else if (input.equals("No") || input.equals("no") || input.equals("NO"))
+			return (0);
+		else {
+			System.out.println("Sección omitida a causa de una respuesta no permitida.");
+			return (0);
 		}
 	}
 }
 
 public class Main {
 	public static void main(String []args) {
-		//Panel de entrada con opciones "Aceptar" y "Cancelar"
-		int choise = JOptionPane.showConfirmDialog(null, "¿Deseas visualizar el resultado de foundaments1?", "Confirmación", JOptionPane.YES_NO_OPTION);
 
-        if (choise == JOptionPane.YES_OPTION) {  // Si el usuario presiona "Aceptar" (textoIngresado no es null)
-            CallFoundaments1.executeFoundaments1();
-            CalcuPanel.calcuPanel();
-        } else {
-        	CalcuPanel.calcuPanel();
-        }
+		Scanner input = new Scanner(System.in);
+		String	choise;
+		System.out.println("AVISO: Se responde solo: \"Sí\" o \"No\". Cualquier otra respuesta se interpretará como un No)\n");
+		System.out.println("¿Deseas visualizar el contenido de Foundaments1?");
+		choise = input.nextLine();
+		if (CheckInput.checkInput(choise) == 1)
+			FoundamentsExecutor.exeFoundaments1();
+		System.out.println("¿Deseas visualizar el contenido de minicalculator?");
+		choise = input.nextLine();
+		if (CheckInput.checkInput(choise) == 1)
+			System.out.println("Calculadora en proceso...");
+        input.close();
 		System.out.println("A la espera de nuevos métodos.");
 	}
 }
