@@ -38,9 +38,8 @@ class MiniCalculator {
 
 class CheckInput {
 	static int checkInput(String input){
-		if (input.equals("Sí") || input.equals("Si") || input.equals("sí") || input.equals("si"))
-			return (1);
-		else if (input.equals("SÍ") || input.equals("SI"))
+		if (input.equals("Sí") || input.equals("Si") || input.equals("sí") || input.equals("si")
+				|| input.equals("SÍ") || input.equals("SI"))
 			return (1);
 		else if (input.equals("No") || input.equals("no") || input.equals("NO"))
 			return (0);
@@ -58,6 +57,7 @@ public class Main {
 		String	choise;
 		
 		System.out.println("AVISO: Se responde solo: \"Sí\" o \"No\". Cualquier otra respuesta se interpretará como un No)\n");
+		
 		System.out.println("¿Deseas visualizar el contenido de Foundaments1?");
 		choise = input.nextLine();
 		FoundamentsExecutor.tryExe(choise, 1);
