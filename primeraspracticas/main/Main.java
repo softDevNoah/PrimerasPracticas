@@ -1,7 +1,8 @@
 package main;
 
 import foundaments1.*;
-import minicalculator.*;
+//import minicalculator.*;
+//import java.util.*;
 
 import javax.swing.JOptionPane;
 
@@ -31,7 +32,7 @@ class CalcuPanel {
 	static int calcu = JOptionPane.showConfirmDialog(null, "Quieres usar la mini calculadora?", "Confirmación", JOptionPane.YES_NO_OPTION);
 
 	public static void calcuPanel() {
-		if (calcu == JOptionPane.YES_OPTION) {  // Si el usuario presiona "Aceptar" (textoIngresado no es null)
+		if (calcu == JOptionPane.YES_OPTION) {
 			CallMiniCalculator.executeMiniCalculator();
 		} else {
 			JOptionPane.showMessageDialog(null, "No hay más contenido actualmente para mostrar.", "Aviso de cierre", JOptionPane.WARNING_MESSAGE);
